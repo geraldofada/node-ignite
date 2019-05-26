@@ -4,10 +4,9 @@
   "description": "A simple NodeJS boilerplate",
   "main": "index.js",
   "scripts": {
-    "execute": "nodemon src/index.js --use-strict",
-    "test": "jest --watch",
-    "lint": "watch \"eslint src/ --quiet \" ",
-    "start": "concurrently \"npm run execute\" \"npm test\"  \"npm run lint\" "
+    "ignite": "sucrase-node src/index.ts",
+    "watch": "nodemon src/index.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,7 +16,8 @@
     "boilerplate",
     "nodejs",
     "node",
-    "js"
+    "js",
+    "ts"
   ],
   "author": "Geraldo Fada",
   "license": "MIT",
@@ -26,10 +26,19 @@
   },
   "homepage": "https://github.com/geraldofada/node-ignite#readme",
   "devDependencies": {
-    "concurrently": "^3.5.1",
-    "eslint": "^4.19.1",
-    "jest": "^22.4.3",
-    "nodemon": "^1.17.2",
-    "watch": "^1.0.2"
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.17.1",
+    "sucrase": "^3.10.1",
+    "typescript": "^3.4.5"
   }
 }
