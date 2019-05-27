@@ -2,11 +2,11 @@
   "name": "node-ignite",
   "version": "0.0.1",
   "description": "A simple NodeJS boilerplate",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "ignite": "sucrase-node src/index.ts",
-    "watch": "nodemon src/index.ts",
-    "build": "tsc"
+    "ignite": "sucrase-node ./src/main.ts",
+    "watch": "nodemon ./src/main.ts",
+    "build": "rimraf ./build && tsc && rollup -c"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,9 @@
     "eslint-plugin-standard": "^4.0.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.12.3",
+    "rollup-plugin-terser": "^5.0.0",
     "sucrase": "^3.10.1",
     "typescript": "^3.4.5"
   }
