@@ -1,12 +1,13 @@
 {
   "name": "node-ignite",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A simple NodeJS boilerplate",
   "main": "main.js",
   "scripts": {
-    "ignite": "sucrase-node ./src/main.ts",
+    "prebuild": "esbuild ./src/main.ts --bundle --platform=node --outfile=./build/out.js",
+    "start": "npm run prebuild && node ./build/out.js",
     "watch": "nodemon ./src/main.ts",
-    "build": "rimraf ./build && tsc && rollup -c"
+    "build": "rimraf ./build && npm run prebuild"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
+    "esbuild": "^0.12.9",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-standard": "^12.0.0",
@@ -36,12 +38,9 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
-    "nodemon": "^1.19.1",
+    "nodemon": "^2.0.7",
     "prettier": "^1.17.1",
     "rimraf": "^2.6.3",
-    "rollup": "^1.12.3",
-    "rollup-plugin-terser": "^5.0.0",
-    "sucrase": "^3.10.1",
     "typescript": "^3.4.5"
   }
 }
