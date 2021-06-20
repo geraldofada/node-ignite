@@ -1,20 +1,21 @@
-import add from './math'
+import add from './math';
 
-console.log('Teste')
+console.log('Teste');
 
-const a = 10
+const a = 10;
 
-console.log(a)
+console.log(a);
 
-let b: number
-b = 10
+let b: number;
+b = 10;
 
-console.log(b)
+console.log(b);
 
 function generictest<T>(a: T): T {
-  return a
+  return a;
 }
 
-console.log(generictest<string>('test'))
+console.log('oba');
+console.log(generictest<string>('test'));
 
-console.log(add(1, 2))
+console.log(add(1, 2));
